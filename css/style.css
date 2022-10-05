@@ -20,7 +20,6 @@ header {
     flex-direction: column;
 }
 
-
 .nav_links {
     display:flex;
     flex-direction: column;
@@ -40,13 +39,15 @@ header {
 }
 /* do i need to use flex basis here? */
 .card {
-    display: flex;
-    flex-direction: column; 
+    border-radius: 50px;
+    flex-basis: 450px;
 }
 
-/* .pricing {
-
-} */
+.pricing {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
 .gallery img {
     border: 10px solid #50C7C7;
@@ -62,31 +63,72 @@ header {
 
 
 @media screen and (min-width: 900px) {  
-    header {
+    a + header {
         display: flex;
-        position: -webkit-sticky;
         position: sticky;
+        top: 0; 
+        z-index: 11111;
         justify-content: space-between;
+        flex-direction: row;
     }
 
     .nav_links {
         flex-direction: row;
-        justify-content:flex-end;
     }
-
-    #logo {
-        display: flex;
-        justify-content:flex-start;
-
-    }
-
     .card {
         flex-basis: 275px;
     }
 
+    .card > header {
+        display: flex;
+        align-items:flex-start;
+    }
     .pricing {
         display: flex;
+        flex-direction: row;
         justify-content:baseline;
         justify-content: center;
     }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+#logo {
+    animation: slide none; 
+}
+}   
+
+
+@media (orientation: portrait) {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pricing {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        border-bottom-left-radius: none;
+        border-bottom-right-radius: none;
+    }
+
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+        border-bottom-left-radius: none;
+        border-bottom-right-radius: none;
+    }
+
+    #gallery, .gallery {
+        display:none;
+    }
+
+    
 }
