@@ -45,8 +45,10 @@ header {
 
 .pricing {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .gallery img {
@@ -92,14 +94,14 @@ header {
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-#logo {
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
     animation: slide none; 
-}
+    }   
 }   
 
 
-@media (orientation: portrait) {
+@media print {
     body {
         font-family: Arial, Helvetica;
         background-image: none;
@@ -107,14 +109,11 @@ header {
 
     .nav_links {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .pricing {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
         border-bottom-left-radius: none;
         border-bottom-right-radius: none;
     }
@@ -128,7 +127,5 @@ header {
 
     #gallery, .gallery {
         display:none;
-    }
-
-    
+    }   
 }
