@@ -39,7 +39,8 @@ header {
 }
 /* do i need to use flex basis here? */
 .card {
-    border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     flex-basis: 450px;
 }
 
@@ -107,6 +108,10 @@ header {
         background-image: none;
     }
 
+    nav {
+        width: 100%;
+    }
+
     .nav_links {
         flex-direction: row;
         justify-content: space-around;
@@ -114,8 +119,10 @@ header {
 
     .pricing {
         display: flex;
+        flex-wrap: nowrap;
         border-bottom-left-radius: none;
         border-bottom-right-radius: none;
+        align-items:flex-end;
     }
 
     .card {
@@ -128,4 +135,8 @@ header {
     #gallery, .gallery {
         display:none;
     }   
+
+    .card li:nth-child(2)::after {
+        content:"\01F44D";
+    }
 }
