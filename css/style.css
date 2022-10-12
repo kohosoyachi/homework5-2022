@@ -1,4 +1,4 @@
-
+/* DEFAULT MOBILE VIEW STYLING */
 #logo {
     animation: slide 5s;
     animation-iteration-count: 1;
@@ -37,7 +37,7 @@ header {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
-/* do i need to use flex basis here? */
+
 .card {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -63,8 +63,10 @@ header {
     flex-wrap: wrap;
     justify-content: center;
 }
+/* END DEFAULT MOBILE VIEW STYLING */
 
 
+/* STYLING FOR SCREENS WITH OVER 900PX */
 @media screen and (min-width: 900px) {  
     a + header {
         display: flex;
@@ -94,14 +96,19 @@ header {
     }
 }
 
+/* END STYLING FOR SCREENS WITH OVER 900PX */
 
+
+/* STYLING FOR REDUCED MOTION  */
 @media screen and (prefers-reduced-motion: reduce) {
     #logo {
     animation: slide none; 
     }   
 }   
+/* END STYLING FOR REDUCED MOTION */
 
 
+/* STYLING FOR PRINT PORTRAIT MODE  */
 @media print {
     body {
         font-family: Arial, Helvetica;
@@ -140,3 +147,4 @@ header {
         content:"\01F44D";
     }
 }
+/* END STYLING FOR PRINT PORTRAIT MODE */
